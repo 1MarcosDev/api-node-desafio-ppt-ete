@@ -42,10 +42,10 @@ app.post('/produtos/cadastrar', (req, res) => {
 })
 
 app.put('/produtos/modificar/:id', (req, res) => {
-  const idProdutos = request.params.id
-  const dados = request.body
+  const idProdutos = req.params.id
+  const dados = req.body
 
-  const produtosIndex = produtoss.findIndex((produtos) => {
+  const produtosIndex = produtos.findIndex((produtos) => {
     return produtos.id === idProdutos
   })
 
@@ -62,9 +62,9 @@ app.put('/produtos/modificar/:id', (req, res) => {
 })
 
 app.delete('/produtos/deletar/:id', (req, res) => {
-  const idProdutos = request.params.id
+  const idProdutos = req.params.id
 
-  const produtosIndex = produtoss.findIndex((produtos) => {
+  const produtosIndex = produtos.findIndex((produtos) => {
     return produtos.id === idProdutos
   })
 
@@ -81,3 +81,4 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Seja bem vindo, usuário!")
   console.log("O servidor está rodando na porta 3000 🚀")
 })
+
